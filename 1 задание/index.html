@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    for (var x = 0; x <=100; x++) {
+            if (x == 0) {
+                alert(x);
+            } else if (x%3 == 0 && x%5 !== 0) {
+                alert("Делится на 3 без остатка");
+            } else if (x%5 == 0 && x%3 !== 0) {
+                alert("Делится на 5 без остатка");      
+            } else if (x%3 == 0 && x%5 == 0) {
+                alert("Делится на 3 и 5  без остатка");
+            } else {
+                alert(x);
+            }
+        }
+    </script>
+</body>
+</html>

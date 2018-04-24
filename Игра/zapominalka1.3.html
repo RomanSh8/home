@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+     
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: white;
+            margin: 10px;
+        }
+        
+        .row div{
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 25%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+        }
+        
+    </style>
+    <div class="row">
+       <div class="cell" id="box"></div>
+       <div class="cell" id="box2"></div>
+       <div class="cell" id="box3"></div>
+       <div class="cell" id="box4"></div>
+    </div>
+    <div class="row">  
+       <div class="cell" id="box5"></div>
+       <div class="cell" id="box6"></div>
+       <div class="cell" id="box7"></div>
+       <div class="cell" id="box8"></div>
+    </div>
+    <div class="row">
+       <div class="cell" id="box9"></div>
+       <div class="cell" id="box10"></div>
+       <div class="cell" id="box11"></div>
+       <div class="cell" id="box12"></div>
+    </div>
+    <div class="row">
+       <div class="cell" id="box13"></div>
+       <div class="cell" id="box14"></div>
+       <div class="cell" id="box15"></div>
+       <div class="cell" id="box16"></div>
+    </div>   
+    <script>
+        
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex ;
+
+ 
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+              }
+              return array;
+            }
+            var arr = [];
+            for (var i = 0; i < 16; i++)
+            arr.push(i);
+            shuffle(arr);
+
+            var cards = [];
+            for (y = 0; y <= arr.length; y++) {
+                if (arr[y] <= 3) {
+                     cards[y] = 'ball.png';
+                } else if (arr[y] > 3 && arr[y] <=7) {
+                    cards[y] = 'battery.png';
+                } else if (arr[y] > 7 && arr[y] <= 11) {
+                    cards[y] = 'car.png';
+                } else if (arr[y] > 11 && arr[y] < 16) {
+                    cards[y] = 'plane.png';
+                }
+            }      
+        
+        
+            
+            
+            var flags = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+            var lastClick = -1;
+            function newClickHandlerFor(position, element) {
+                var el = document.getElementById(element);
+                el.onclick = function() {
+
+
+                    this.style.backgroundImage =  flags[position] ? '' : "URL(" + cards[position] + ")";
+                    flags[position] = !flags[position];
+
+                    if (cards[lastClick] == cards[position]) {
+                        alert('Вы угадали');
+                    } 
+                    lastClick = position;
+
+
+
+                };
+            }
+
+            newClickHandlerFor(0, 'box');
+            newClickHandlerFor(1, 'box2');
+            newClickHandlerFor(2, 'box3');
+            newClickHandlerFor(3, 'box4');
+            newClickHandlerFor(4, 'box5');
+            newClickHandlerFor(5, 'box6');
+            newClickHandlerFor(6, 'box7');
+            newClickHandlerFor(7, 'box8');
+            newClickHandlerFor(8, 'box9');
+            newClickHandlerFor(9, 'box10');
+            newClickHandlerFor(10, 'box11');
+            newClickHandlerFor(11, 'box12');
+            newClickHandlerFor(12, 'box13');
+            newClickHandlerFor(13, 'box14');
+            newClickHandlerFor(14, 'box15');
+            newClickHandlerFor(15, 'box16');
+
+        
+        
+    </script>
+</body>
+</html>
