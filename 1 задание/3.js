@@ -4,15 +4,29 @@
     //Во всех остальных случаях выводить само число x. X меняется от 1 до 100.
     
 
-        for (var x = 0; x <=100; x++) {
+//        for (var x = 0; x <=100; x++) {
+//            if (x == 0) {
+//                console.log(x);
+//            } else if (x % 3 == 0 && x % 5 !== 0) {
+//                console.log("Делится на 3 без остатка");
+//            } else if (x%5 == 0 && x%3 !== 0) {
+//                console.log("Делится на 5 без остатка");      
+//            } else if (x%3 == 0 && x%5 == 0) {
+//                console.log("Делится на 3 и 5  без остатка");
+//            } else {
+//                console.log(x);
+//            }
+//        }
+
+        for (var x = 0; x <=20; x++) {
             if (x == 0) {
                 console.log(x);
-            } else if (x%3 == 0 && x%5 !== 0) {
+            } else if (x % 3 == 0 && x % 5 == 0) {
+                console.log("Делится на 3 и 5  без остатка");            
+            } else if (x % 3 == 0) {
                 console.log("Делится на 3 без остатка");
-            } else if (x%5 == 0 && x%3 !== 0) {
+            } else if (x % 5 == 0) {
                 console.log("Делится на 5 без остатка");      
-            } else if (x%3 == 0 && x%5 == 0) {
-                console.log("Делится на 3 и 5  без остатка");
             } else {
                 console.log(x);
             }
